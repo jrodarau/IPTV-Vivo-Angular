@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background: #fff;
+}
+
+.focoFilme {
+    -webkit-box-shadow: 0px 0px 20px -2px blue !important;
+    -moz-box-shadow: 0px 0px 20px -2px blue !important;
+    box-shadow: 0px 0px 20px -2px blue !important;
+}
