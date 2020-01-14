@@ -1,9 +1,33 @@
 body {
-    background: #fff;
+    background: #1a237e;
 }
 
 .focoFilme {
-    -webkit-box-shadow: 0px 0px 20px -2px blue !important;
-    -moz-box-shadow: 0px 0px 20px -2px blue !important;
-    box-shadow: 0px 0px 20px -2px blue !important;
+    -webkit-box-shadow: 0px 0px 20px -2px #ffffff !important;
+    -moz-box-shadow: 0px 0px 20px -2px #ffffff !important;
+    box-shadow: 0px 0px 20px -2px #ffffff !important;
+}
+
+#answer {
+    min-height: 10em;
+}
+
+.card .card-title {
+    color: black;
+    font-family: 'Anton', sans-serif;
+    background-color: white;
+    margin: 8px 8px 8px 8px;
+    padding: 2px;
+    font-size: 14px;
+    text-align: center;
+}
+
+h3 {
+    letter-spacing: 15px;
+    line-height: 1.5;
+    word-spacing: 2px;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 25px;
 }

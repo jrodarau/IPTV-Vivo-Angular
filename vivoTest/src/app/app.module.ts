@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ListfilmsComponent } from './shared/listfilms/listfilms.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 
@@ -16,7 +17,8 @@ import { ListfilmsComponent } from './shared/listfilms/listfilms.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListfilmsComponent
+    ListfilmsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
