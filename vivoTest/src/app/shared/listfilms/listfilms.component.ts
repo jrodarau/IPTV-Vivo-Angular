@@ -188,7 +188,7 @@ export class ListfilmsComponent implements OnInit {
                     html += '<span class="card-title black-text">' + title + '</span>';
                     html += '</div>';
                     html += '<div class="card-content">';
-                    html += '<p> Transmissão: ' + year + '</p>';
+                    html += '<p> Ano de lançamento: ' + year + '</p>';
                     html += '</div>';
                     html += '<div class="card-action">';
                     html += '<a href="#modal1" class=" center waves-effect waves-light btn modal-trigger blue">Acessar IMDB</a>';

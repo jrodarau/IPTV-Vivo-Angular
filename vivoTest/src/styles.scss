@@ -3,9 +3,10 @@ body {
 }
 
 .focoFilme {
-    -webkit-box-shadow: 0px 0px 20px -2px #ffffff !important;
-    -moz-box-shadow: 0px 0px 20px -2px #ffffff !important;
-    box-shadow: 0px 0px 20px -2px #ffffff !important;
+    -webkit-box-shadow: 0px 0px 20px -4px #ffffff !important;
+    -moz-box-shadow: 0px 0px 20px -4px #ffffff !important;
+    box-shadow: 0px 0px 20px -4px #ffffff !important;
+    border-style: groove;
 }
 
 #answer {
