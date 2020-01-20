@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
     selector: 'app-listfilms',
@@ -19,6 +20,7 @@ export class ListfilmsComponent implements OnInit {
                 switch (e.which) {
                     case 13: // Press Enter
                         showInfo(focoEm);
+                        // alert("Foco em: " + focoEm);
                         break;
                     case 37: // Arrow Left
                         var q = inputCampo.val();
@@ -84,6 +86,8 @@ export class ListfilmsComponent implements OnInit {
                         break;
                 }
             });
+
+
             // FIM sistema movimentacao
             // INICIO sistema load films
             var nomes = [
@@ -121,9 +125,25 @@ export class ListfilmsComponent implements OnInit {
             });
         });
         function showInfo(focarEm) {
-            var linkNotice = $('#linkFilme' + focarEm);
-            var goToPage = linkNotice.attr('href');
-            window.location.href = goToPage;
+
+            if ($('#modal').hasClass('open')) {
+                $('#modal').modal('close');
+                $("#modal").empty();
+                return;
+            }
+            var infoFilme = $('#infoFilme' + focarEm);
+            var imdbID = infoFilme.val();
+            $.get("https://www.omdbapi.com/?i=" + imdbID + "&apikey=4dd797fc", (data) => {
+                var html = '';
+                html += '<div class="modal-content">';
+                html += '<h4>' + data.Title + '</h4>';
+                html += '<p> ' + data.Plot + '</p>'
+                html += '</div>';
+                $("#modal").append(html);
+                $('#modal').modal('open');
+            });
+
+
         }
         function addFoco(focarEm) {
             if (focarEm < -1) {
@@ -163,11 +183,17 @@ export class ListfilmsComponent implements OnInit {
                 }
 
                 nadaEncontrado.empty();
+                /*
+                Count indica o id de um filme
+                Atraves do Count, movimentaremos a sombra e buscaremos o imdbID para apresentar os detalhes do 
+                filme (Ao apertar Enter, exibira os detalhse do filme em que o Count estiver apontado) em um modal.
+                */
                 var count = 0;
                 for (var i = 0; i < data.Search.length; i++) {
                     count++;
                     var title = data.Search[i].Title;
-                    var imdburl = "https://www.imdb.com/title/" + data.Search[i].imdbID + "/";
+                    var imdbID = data.Search[i].imdbID;
+                    var imdburl = "https://www.imdb.com/title/" + imdbID + "/";
                     var posterurl = data.Search[i].Poster;
                     // CASO PRECISAR EXIBIR TITULOS SEM POSTER
                     // if (posterurl === "N/A") {
@@ -178,20 +204,19 @@ export class ListfilmsComponent implements OnInit {
                         count--;
                         continue;
                     }
-                    var year = data.Search[i].Year;
+
                     var html = '';
-                    html += '<div class="row col s12 l3 m6 center container">';
+                    html += '<div class="row col s12 l3 m6">';
                     html += '<div>';
-                    html += '<div id="filme' + count + '" class="card large" style="text-transform: uppercase;">';
+                    html += '<div id="filme' + count + '" class="card large" href="modal" style="text-transform: uppercase;">';
+                    html += '<input type="hidden" id="infoFilme' + count + '" value="' + imdbID + '">'
                     html += '<div class="card-image">';
                     html += '<img src="' + posterurl + '">';
                     html += '<span class="card-title black-text">' + title + '</span>';
                     html += '</div>';
                     html += '<div class="card-content">';
-                    html += '<p> Ano de lançamento: ' + year + '</p>';
-                    html += '</div>';
-                    html += '<div class="card-action">';
-                    html += '<a href="#modal1" class=" center waves-effect waves-light btn modal-trigger blue">Acessar IMDB</a>';
+                    html += '<p class = "center p white-text"> Ano de lançamento: ' + data.Search[i].Year + '</p>';
+                    html += '<p class = "center p white-text"> Tipo: ' + data.Search[i].Type + '</p>';
                     html += '</div>';
                     html += '</div>';
                     html += '</div>';

@@ -19,8 +19,18 @@ body {
     background-color: white;
     margin: 8px 8px 8px 8px;
     padding: 2px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
+}
+
+.p {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background-color: black;
+    border-radius: 5px;
+    border-style: double;
 }
 
 h3 {
