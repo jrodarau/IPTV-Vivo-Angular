@@ -168,7 +168,6 @@ export class ListfilmsComponent implements OnInit {
 
         }
         function addFoco(focarEm) {
-            // alert(focarEm);
             if (focarEm <= 0) {
                 var navFocar = $("#search").focus();
                 $('#focoEm').val(-3);
