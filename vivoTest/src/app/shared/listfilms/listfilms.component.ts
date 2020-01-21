@@ -167,7 +167,11 @@ export class ListfilmsComponent implements OnInit {
 
         }
         function addFoco(focarEm) {
+<<<<<<< HEAD
             if (focarEm <= 0) {
+=======
+            if (focarEm < -1) {
+>>>>>>> parent of 25ad49c... correcoes em keyup e addfoco
                 var navFocar = $("#search").focus();
                 $('#focoEm').val(-3);
                 // $("#answer").empty();
