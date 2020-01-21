@@ -13,3 +13,6 @@ O Objetivo da aplicação é permitir que o usuário navegue nos filmes exibidos
 
 ### Observações adicionais:
 - Não se esquecer de rodar npm install após clonar o projeto para baixar as dependencias do node_modules
+
+![Screenshot](https://i.imgur.com/BNotNRw.jpg)
+
