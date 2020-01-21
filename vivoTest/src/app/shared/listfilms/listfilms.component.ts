@@ -125,9 +125,7 @@ export class ListfilmsComponent implements OnInit {
             });
         });
         function showInfo(focarEm) {
-            if (focarEm <= 0) {
-                return;
-            }
+
             if ($('#modal').hasClass('open')) {
                 $('#modal').modal('close');
                 $("#modal").empty();
@@ -136,29 +134,10 @@ export class ListfilmsComponent implements OnInit {
             var infoFilme = $('#infoFilme' + focarEm);
             var imdbID = infoFilme.val();
             $.get("https://www.omdbapi.com/?i=" + imdbID + "&apikey=4dd797fc", (data) => {
-                var produtora = data.Production;
-
-                if (typeof (produtora) === 'undefined' || produtora === 'N/A') {
-                    produtora = 'Não informado'
-                }
-
                 var html = '';
                 html += '<div class="modal-content">';
-                html += '<div class="row">';
-                html += '<div class="col s12 l3 m12">';
-                html += '<center>';
-                html += '<img src="' + data.Poster + '" class="responsive-img">';
-                html += '</center>';
-                html += '</div>';
-                html += '<div class = "col s12 l9 m12 >';
-                html += '<h4 class="titleModal center" style= "font-family:Anton;  >' + data.Title + '</h4>';
-                html += '<p style= "font-family:Anton";>Sinopse: ' + data.Plot + '</p>'
-                html += '<p style= "font-family:Anton";> Genêro: ' + data.Genre + '</p>'
-                html += '<p style= "font-family:Anton";> Lançamento: ' + data.Released + '</p>'
-                html += '<p style= "font-family:Anton";> Avaliação Geral: ' + data.imdbRating + '</p>'
-                html += '<p style= "font-family:Anton";> Produtora: ' + produtora + '</p>'
-                html += '</div>'
-                html += '</div>';
+                html += '<h4>' + data.Title + '</h4>';
+                html += '<p> ' + data.Plot + '</p>'
                 html += '</div>';
                 $("#modal").append(html);
                 $("#modal").modal();
@@ -191,11 +170,7 @@ export class ListfilmsComponent implements OnInit {
         }
         function loadFilms(q, nadaEncontrado) {
             var data;
-            var focoEm = $("#focoEm");
-            if(parseInt(focoEm.val())<0) {
-                $("#answer").empty();
-            }
-            focoEm.val(0);
+            $('#focoEm').val(0);
             $.get("https://www.omdbapi.com/?s=" + q + "&apikey=4dd797fc", function (rawdata) {
                 var rawstring = JSON.stringify(rawdata);
                 data = JSON.parse(rawstring);
@@ -231,13 +206,13 @@ export class ListfilmsComponent implements OnInit {
                     }
 
                     var html = '';
-                    html += '<div class="row col s12 l3 m6 ">';
+                    html += '<div class="row col s12 l3 m6">';
                     html += '<div>';
-                    html += '<div id="filme' + count + '" class="card large " href="modal" style="text-transform: uppercase;">';
+                    html += '<div id="filme' + count + '" class="card large" href="modal" style="text-transform: uppercase;">';
                     html += '<input type="hidden" id="infoFilme' + count + '" value="' + imdbID + '">'
                     html += '<div class="card-image">';
                     html += '<img src="' + posterurl + '">';
-                    html += '<span class="card-title black-text ">' + title + '</span>';
+                    html += '<span class="card-title black-text">' + title + '</span>';
                     html += '</div>';
                     html += '<div class="card-content">';
                     html += '<p class = "center p white-text"> Ano de lançamento: ' + data.Search[i].Year + '</p>';

@@ -1,11 +1,11 @@
 body {
-    background: #eceff1;
+    background: #1a237e;
 }
 
 .focoFilme {
-    -webkit-box-shadow: 0px 0px 20px -4px black !important;
-    -moz-box-shadow: 0px 0px 20px -4px black !important;
-    box-shadow: 0px 0px 20px -4px black !important;
+    -webkit-box-shadow: 0px 0px 20px -4px #ffffff !important;
+    -moz-box-shadow: 0px 0px 20px -4px #ffffff !important;
+    box-shadow: 0px 0px 20px -4px #ffffff !important;
     border-style: groove;
 }
 
@@ -21,10 +21,6 @@ body {
     padding: 2px;
     font-size: 12px;
     text-align: center;
-}
-
-.card.large {
-    height: 430px !important;
 }
 
 .p {
