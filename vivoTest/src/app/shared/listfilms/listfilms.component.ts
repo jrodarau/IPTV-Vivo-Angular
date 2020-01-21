@@ -162,7 +162,7 @@ export class ListfilmsComponent implements OnInit {
                 html += '</div>';
                 html += '</div>';
                 $("#modal").append(html);
-                $('#modal').modal('open');
+                $("#modal").modal();
             });
 
 
