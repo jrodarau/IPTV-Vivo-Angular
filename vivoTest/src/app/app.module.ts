@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ListfilmsComponent } from './shared/listfilms/listfilms.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ModalInfoComponent } from './shared/modal-info/modal-info.component';
+
 
 
 
@@ -21,7 +21,7 @@ import { ModalInfoComponent } from './shared/modal-info/modal-info.component';
     NavbarComponent,
     ListfilmsComponent,
     FooterComponent,
-    ModalInfoComponent
+    
   ],
   imports: [
     BrowserModule,
