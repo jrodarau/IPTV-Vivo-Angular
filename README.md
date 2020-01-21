@@ -8,6 +8,8 @@ O Objetivo da aplicação é permitir que o usuário navegue nos filmes exibidos
 ### Tecnologias utilizadas:
 - Angular 8
 - Materialize css
-- HTML, CSS, JS, Jquery & Json,
+- HTML, CSS, JS, Jquery
 - Gerenciamento de pacotes Npm
 
+### Observações adicionais:
+- Não se esquecer de rodar npm install após clonar o projeto para baixar as dependencias do node_modules
