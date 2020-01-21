@@ -4,6 +4,7 @@ declare var $: any;
 @Component({
     selector: 'app-listfilms',
     templateUrl: './listfilms.component.html',
+    styleUrls: ['./listfilms.component.scss']
 })
 export class ListfilmsComponent implements OnInit {
 
@@ -72,9 +73,7 @@ export class ListfilmsComponent implements OnInit {
                         break;
                     case 40: // Arrow Down
                         if (removeFoco(focoEm)) {
-                            if(focoEm==0){
-                                focoEm = 1;
-                            }else if (focoEm == -2) {
+                            if (focoEm == -2) {
                                 focoEm = -1;
                             } else {
                                 focoEm += 4;
