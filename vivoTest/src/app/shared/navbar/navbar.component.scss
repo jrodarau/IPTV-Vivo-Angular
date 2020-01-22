@@ -1,0 +1,26 @@
+        .brand-logo {
+            letter-spacing: 6px;
+            word-spacing: 2px;
+            font-family: 'Anton', sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        #form1 {
+            max-width: 450pt;
+            margin-left: 170px;
+        }
+        
+        nav,
+        nav .nav-wrapper i {
+            height: 90px;
+            line-height: 90px;
+        }
+        
+         ::placeholder {
+            letter-spacing: 3px;
+            word-spacing: 2px;
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            padding-left: 150px;
+        }
